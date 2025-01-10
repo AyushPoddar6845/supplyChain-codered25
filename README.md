@@ -26,7 +26,8 @@ Our DApp utilizes the inherent transparency and immutability of blockchain to pr
 
 ## Project Overview
 
-![alt text](https://raw.githubusercontent.com/AyushPoddar6845/supplyChain-codered25/refs/heads/main/Images/Screenshot%202025-01-10%20074411.png)
+![alt text](https://raw.githubusercontent.com/AyushPoddar6845/supplyChain-codered25/refs/heads/main/Images/Screenshot%202025-01-10%20104755.png)
+![alt text](https://raw.githubusercontent.com/AyushPoddar6845/supplyChain-codered25/refs/heads/main/Images/Screenshot%202025-01-10%20104743.png)
 
 ## Prerequisites
 
