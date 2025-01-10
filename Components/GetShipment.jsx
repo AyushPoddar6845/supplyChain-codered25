@@ -3,11 +3,22 @@ import { useState } from "react";
 export default ({ getModel, setGetModel, getShipment }) => {
   const [index, setIndex] = useState(0);
   const [singleShipmentData, setSingleShipmentData] = useState();
+  const [isLoading, setIsLoading] = useState(false);
+  const [error, setError] = useState(null);
 
   const getShipmentData = async () => {
-    const getData = await getShipment(index);
-    setSingleShipmentData(getData);
-    console.log(getData);
+    setIsLoading(true);
+    setError(null);
+    try {
+      const getData = await getShipment(index);
+      console.log("Fetched data:", getData);
+      setSingleShipmentData(getData);
+    } catch (err) {
+      console.error("Error fetching shipment:", err);
+      setError("Failed to fetch shipment data. Please try again.");
+    } finally {
+      setIsLoading(false);
+    }
   };
   console.log(singleShipmentData);
 

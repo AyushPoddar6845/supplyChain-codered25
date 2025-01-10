@@ -3,8 +3,7 @@ import Web3Modal from "web3modal";
 import { ethers } from "ethers";
 
 //INTERNAL IMPORT
-import tracking from "./Tracking.json";
-import { ConstructorFragment } from "ethers/lib/utils";
+import tracking from "../Conetxt/Tracking.json";
 const ContractAddress = "0x5FbDB2315678afecb367f032d93F642f64180aa3";
 const ContractABI = tracking.abi;
 
@@ -27,7 +26,7 @@ export const TrackingProvider = ({ children }) => {
     const web3Modal = new Web3Modal();
     const connection = await web3Modal.connect()
     const provider = new ethers.providers.Web3Provider(connection);
-    const signer = provider.getSigner()
+    const signer = provider.getSigner();
     const contract = fetchContract(signer);
     const createItem = await contract.createShipment(
         receiver,
@@ -41,6 +40,8 @@ export const TrackingProvider = ({ children }) => {
       
       await createItem.wait();
       console.log(createItem);
+      const updatedShipments = await getAllShipment();
+      return updatedShipments;  
       } catch (error) {
         console.log("some went wrong" , error);
       }
@@ -113,7 +114,6 @@ export const TrackingProvider = ({ children }) => {
 
         transaction.wait();
         console.log(transaction);
-
     }
     catch (error) {
         console.log("wrong Completeshipment" , error);

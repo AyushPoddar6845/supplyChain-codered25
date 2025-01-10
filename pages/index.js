@@ -35,6 +35,7 @@ const [allShipmentsdata, setallShipmentsdata] = useState();
 
 useEffect(() => {
   const getCampaignsData = getAllShipment();
+  
 
   return async () => {
     const allData = await getCampaignsData;
@@ -53,6 +54,12 @@ return (
     <Table
       setCreateShipmentModel={setCreateShipmentModel}
       allShipmentsdata={allShipmentsdata}
+    />
+    <Form
+      createShipmentModel={createShipmentModel}
+      setCreateShipmentModel={setCreateShipmentModel}
+      createShipment={createShipment}
+      setallShipmentsdata={setallShipmentsdata} 
     />
     <Profile
       openProfile={openProfile}

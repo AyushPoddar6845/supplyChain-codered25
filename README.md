@@ -1,114 +1,90 @@
-
 # Building and Deploying a Blockchain Supply Chain Management DApp
 
 Building and Deploying a Blockchain Supply Chain Management DApp
 
 Blockchain Supply chain management plays a critical role in ensuring efficient operations and maintaining consumer trust. This project focuses on developing and deploying a decentralized application (DApp) powered by blockchain technology to streamline supply chain management processes.
 
-Our DApp utilizes the inherent transparency and immutability of blockchain to provide a secure and transparent platform for tracking goods at every stage of the supply chain. Leveraging smart contracts, the DApp automates various tasks such as verifying product authenticity, recording transactions, and managing inventory in real-time
+Our DApp utilizes the inherent transparency and immutability of blockchain to provide a secure and transparent platform for tracking goods at every stage of the supply chain. Leveraging smart contracts, the DApp automates various tasks such as verifying product authenticity, recording transactions, and managing inventory in real-time.
+
+## Features
+
+- **Decentralized Tracking:** Provides a secure and transparent platform for tracking shipments across the supply chain.
+- **Smart Contract Automation:** Automates tasks such as shipment creation, status updates, and payment handling using Ethereum smart contracts.
+- **Transparent Records:** Ensures immutable and transparent records of all transactions, reducing fraud and enhancing trust.
+- **Real-Time Updates:** Tracks and updates shipment status in real-time for all users.
+- **User Authentication:** Enables secure and seamless wallet-based authentication via MetaMask.
+
+## Technologies Used
+
+- **Next.js:** Framework for creating the user interface and managing server-side rendering.
+- **Ethereum:** Blockchain network for deploying smart contracts and enabling decentralized interactions.
+- **MetaMask:** Wallet integration for user authentication and Ethereum transactions.
+- **Ganache:** Local blockchain environment for development and testing.
+- **TailwindCSS:** CSS framework for designing a responsive and elegant user interface.
+- **Solidity:** Programming language used to write smart contracts for the supply chain logic.
+- **Hardhat:** Development environment for testing, deploying, and managing Ethereum-based smart contracts.
 
 ## Project Overview
 
-![alt text](https://www.daulathussain.com/wp-content/uploads/2023/09/tracking.png)
+![alt text](https://raw.githubusercontent.com/AyushPoddar6845/supplyChain-codered25/refs/heads/main/Images/Screenshot%202025-01-10%20074411.png)
 
-## Instruction
+## Prerequisites
 
-Kindly follow the following Instructions to run the project in your system and install the necessary requirements
+Before you begin, ensure you have the following installed:
 
+- [Node.js](https://nodejs.org/) (v16 or higher)
+- [MetaMask](https://metamask.io/) browser extension
+- [Ganache](https://trufflesuite.com/ganache/) for local blockchain deployment
+- [Hardhat](https://hardhat.org/) development framework
 
-- [Final Source Code](https://www.theblockchaincoders.com/sourceCode/supply-chain-management-project-source-code)
+## Installation
 
-#### Setup Video
-- [Final Code Setup video](https://www.youtube.com/watch?v=LlX-39ywxsU)
+1. Clone the repository:
 
-```https://code.visualstudio.com/download
-  WATCH: Setup & Demo Of Project
-```
+   ```bash
+   git clone https://github.com/your-github-username/blockchain-supplychain-dapp.git
+   cd blockchain-supplychain-dapp
 
-#### Install Vs Code Editor
+   ```
 
-```https://code.visualstudio.com/download
-  GET: VsCode Editor
-```
+2. Create a .env file in the root of the project and add the required environment variables.
 
-#### NodeJs & NPM Version
+   ```bash
+   NEXT_PUBLIC_CONTRACT_ADDRESS=your_deployed_contract_address
+   NEXT_PUBLIC_INFURA_API_KEY=your_infura_api_key
 
-```https://nodejs.org/en/download
-  NodeJs: v18.12.1
-  NPM: 8.19.2
-```
+   ```
 
-#### Clone Starter File
+3. Install the required dependencies:
 
-```https://github.com/daulathussain/Airdrop-Crypto-Starter-File
-  GET: Project Starter File Download
-```
+   ```bash
+   npm install
 
+   ```
 
-All you need to follow the complete project and follow the instructions which are explained in the tutorial by Daulat
+4. Start Ganache and configure the network in MetaMask to connect to the local blockchain.
 
-## Final Code Instruction
+5. Compile and deploy the smart contracts using Hardhat:
 
-If you download the final source code then you can follow the following instructions to run the Dapp successfully
+   ```bash
+   npx hardhat compile
+   npx hardhat run scripts/deploy.js --network ganache
 
-#### Setup Video
+   ```
 
-```https://code.visualstudio.com/download
-  WATCH: Setup & Demo Of Project
-```
+6. Start the development server:
 
-#### Final Source Code
+   ```bash
+   npm run dev
 
-```https://www.theblockchaincoders.com/SourceCode
-  Download the Final Source Code
-```
+   ```
 
-#### Install Vs Code Editor
+7. Open your browser and navigate to http://localhost:3000 to access the DApp.
 
-```https://code.visualstudio.com/download
-  GET: VsCode Editor
-```
+## Usage
 
-#### NodeJs & NPM Version
-
-```https://nodejs.org/en/download
-  NodeJs: v18.12.1
-  NPM: 8.19.2
-```
-
-
-#### Test Faucets
-
-Alchemy will provide you with some free test faucets which you can transfer to your wallet address for deploying the contract
-
-```https://www.alchemy.com/faucets
-  Get: Free Test Faucets
-```
-
-#### RemixID
-
-We are using RemixID for deploying the contract and generation of the ABI in the project, but you can use any other tools like Hardhat, etc.
-
-```https://remix-project.org
-  OPEN: RemixID
-```
-
-#### Polygon Mumbai
-
-```https://mumbai.polygonscan.com/
-  OPEN: Polygon Mumbai
-```
-
-## Important Links
-
-- [Get Pro Blockchain Developer Course](https://www.theblockchaincoders.com/pro-nft-marketplace)
-- [Support Creator](https://bit.ly/Support-Creator)
-- [All Projects Source Code](https://www.theblockchaincoders.com/SourceCode)
-
-
-## Authors
-
-- [@theblockchaincoders.com](https://www.theblockchaincoders.com/)
-- [@consultancy](https://www.theblockchaincoders.com/consultancy)
-- [@youtube](https://www.youtube.com/@daulathussain)
-
+- Connect Wallet: Connect your MetaMask wallet to the application.
+- Create Shipment: Enter shipment details to create a new shipment on the blockchain.
+- Track Shipment: View the status of shipments in real-time.
+- Update Status: Change the shipment status as it moves through the supply chain.
+- Complete Shipment: Finalize shipments and process payments securely.

@@ -4,16 +4,20 @@ export default ({
   setCreateShipmentModel,
   createShipmentModel,
   createShipment,
+  setallShipmentsdata,
 }) => {
   const [shipment, setShipment] = useState({
     receiver: "",
+    pickupTime: "",
     distance: "",
     price: "",
-    pickupTime: "", // Add pickupTime to the state
   });
 
   const createItem = async () => {
     try {
+      const updatedShipments = await createShipment(shipment);
+      setCreateShipmentModel(false);
+      setallShipmentsdata(updatedShipments);
       await createShipment(shipment);
     } catch (error) {
       console.log("Error creating item:", error);
@@ -57,7 +61,7 @@ export default ({
               <div className="relative mt-3">
                 <input
                   type="text"
-                  placeholder="Receiver"
+                  placeholder="receiver"
                   className="w-full pl-5 pr-3 py-2 text-gray-500 bg-transparent outline-none border focus:border-indigo-600 shadow-sm rounded-lg"
                   onChange={(e) =>
                     setShipment({
@@ -70,7 +74,7 @@ export default ({
               <div className="relative mt-3">
                 <input
                   type="date"
-                  placeholder="Pickup Time"
+                  placeholder="pickupTime"
                   className="w-full pl-5 pr-3 py-2 text-gray-500 bg-transparent outline-none border focus:border-indigo-600 shadow-sm rounded-lg"
                   onChange={(e) =>
                     setShipment({
@@ -83,7 +87,7 @@ export default ({
               <div className="relative mt-3">
                 <input
                   type="text"
-                  placeholder="Distance"
+                  placeholder="distance"
                   className="w-full pl-5 pr-3 py-2 text-gray-500 bg-transparent outline-none border focus:border-indigo-600 shadow-sm rounded-lg"
                   onChange={(e) =>
                     setShipment({
@@ -96,7 +100,7 @@ export default ({
               <div className="relative mt-3">
                 <input
                   type="text"
-                  placeholder="Price"
+                  placeholder="price"
                   className="w-full pl-5 pr-3 py-2 text-gray-500 bg-transparent outline-none border focus:border-indigo-600 shadow-sm rounded-lg"
                   onChange={(e) =>
                     setShipment({
